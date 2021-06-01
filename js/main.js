@@ -55,11 +55,11 @@ let chooseOptIncome = document.querySelector(".choose-income"),
 let money, time;
 
 startCalc.addEventListener('click', function () {
-    money = +prompt("Ваш бюджет на месяц?");
-    time = prompt("Введите дату в формате YYYY-MM-DD", '');
+    money = +prompt("Your monthly budget?");
+    time = prompt("Type in Date in format of YYYY-MM-DD", '');
 
     while (isNaN(money) || money == '' || money == null) {
-        money = +prompt("Ваш бюджет на месяц?");
+        money = +prompt("Your monthly budget?");
     }
     appData.budget = money;
     appData.timeData = time;
@@ -98,13 +98,13 @@ countDayBudgetBtn.addEventListener('click', function () {
     appData.moneyPerDay = +(appData.budget / 30).toFixed();
     rightSideBlockValues[1].textContent = appData.moneyPerDay;
     if (appData.moneyPerDay <= 100) {
-        rightSideBlockValues[2].textContent = "Минимальный уровень достатка";
+        rightSideBlockValues[2].textContent = "Minimal income level";
     } else if (appData.moneyPerDay > 100 && appData.moneyPerDay <= 2000) {
-        rightSideBlockValues[2].textContent = "Средний уровень достатка";
+        rightSideBlockValues[2].textContent = "Average income level";
     } else if (appData.moneyPerDay > 2000) {
-        rightSideBlockValues[2].textContent = "Высокий уровень достатка";
+        rightSideBlockValues[2].textContent = "High income level";
     } else {
-        rightSideBlockValues[2].textContent = "Хз какой уровень достатка";
+        rightSideBlockValues[2].textContent = "Dunno income level";
     }
 });
 
